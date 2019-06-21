@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Country_" representedClassName="Country_" syncable="YES" codeGenerationType="class">
+        <attribute name="callingCodes" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="capital" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flagImage" optional="YES" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="flagUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subRegion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeZones" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="currencies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Currencies_" inverseName="country_" inverseEntity="Currencies_" syncable="YES"/>
+        <relationship name="languages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Languages_" inverseName="country_" inverseEntity="Languages_" syncable="YES"/>
+    </entity>
+    <entity name="Currencies_" representedClassName="Currencies_" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="country_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country_" inverseName="currencies" inverseEntity="Country_" syncable="YES"/>
+    </entity>
+    <entity name="Languages_" representedClassName="Languages_" syncable="YES" codeGenerationType="class">
+        <attribute name="iso639_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iso639_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nativeName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="country_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country_" inverseName="languages" inverseEntity="Country_" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Country_" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Currencies_" positionX="-63" positionY="45" width="128" height="105"/>
+        <element name="Languages_" positionX="-54" positionY="54" width="128" height="120"/>
+    </elements>
+</model>
